@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tailwind</title>
+
+    <style type="text/tailwindcss">
+      @theme {
+        /* * Fonts */
+        --font-cursive: 'Cedarville Cursive';
+        /* Brand colors */
+        --color-brand: #ff6800;
+        /* * Semantic colors */
+        /* --color-primary: bg-primary, text-primary, border-primary  */
+        --color-primary: var(--color-brand);
+        /* * Custom spacing */
+        /* --spacing-* m- p- gap- space-x- */
+        --spacing-box: 17px;
+      }
+
+      @layer components {
+        .list-item {
+          @apply p-2 font-bold text-white hover:cursor-pointer hover:bg-orange-300 hover:text-black;
+        }
+      }
+    </style>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="bg-orange-200 bg-orange-300 sm:max-md:bg-white">
+    <header class="font-cursive">
+      <nav>
+        <!-- <ul style="background-color: aqua; margin: 32px"> -->
+        <ul class="bg-primary flex justify-around">
+          <li class="list-item">Home</li>
+          <li class="list-item">About</li>
+          <li class="list-item">Contact</li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="p-[27px] shadow-lg">
+      <h1 class="m-box text-primary text-2xl font-bold">Tailwind CSS Framework</h1>
+      <p class="m-box">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium placeat sint corrupti
+        accusamus ex iusto dolores cumque officia perferendis. Laudantium.
+      </p>
+    </main>
+  </body>
+</html>

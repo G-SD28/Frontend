@@ -135,9 +135,9 @@ console.log('Alter vor der Änderung:', person.age);
 person.age = 45;
 console.log('Alter nach der Änderung:', person.age);
 
-const array = [1, 4, 7];
-array[1] = 8;
-console.log(array);
+const arrayShow = [1, 4, 7];
+arrayShow[1] = 8;
+console.log(arrayShow);
 
 const make = 'Toyota';
 const model = 'Corolla';

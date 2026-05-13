@@ -3,7 +3,7 @@ const args = process.argv.slice(2);
 
 // Überprüfe, ob genau zwei Argumente vorhanden sind
 if (args.length !== 2) {
-  console.error('❌ Bitte gebt genau zwei Argumente an.');
+  console.error('❌ Bitte gib genau zwei Argumente an.');
   console.log('Verwendung: node index.js <Zahl1> <Zahl2>');
   process.exit(2);
 }

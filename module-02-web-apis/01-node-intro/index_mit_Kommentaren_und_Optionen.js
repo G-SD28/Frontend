@@ -36,7 +36,8 @@ const num2 = Number(inputTwo);
 // * Auf NaN pruefen
 if (Number.isNaN(num1) || Number.isNaN(num2)) {
   console.error(`❌ Beide Argumente müssen gültige Zahlen sein.`);
-  // return; // Beendet Script ohne Fehlercode
+  console.log(`Eingaben: "${num1}" und "${num2}"`);
+  // return; // Beendet if-Schleife, oder Funktion ohne Fehlercode
   process.exit(2); // Beendet Script mit Fehlercode
 }
 

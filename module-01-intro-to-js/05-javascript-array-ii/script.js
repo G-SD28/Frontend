@@ -70,6 +70,10 @@ const triple = multiplier(3);
 */
 // console.log(triple(4));
 
+// * ALTERNATIVE:
+const doubleShort = multiplier(2)(3);
+console.log(doubleShort);
+
 // # Higher-Order Array Methoden
 const numbers = [1, 2, 3, 4, 5];
 // console.log(numbers);

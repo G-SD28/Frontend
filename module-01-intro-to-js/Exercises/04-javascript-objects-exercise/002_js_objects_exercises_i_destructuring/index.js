@@ -81,6 +81,8 @@ function displayPerson2({ name, age, ...stegosaurus }) {
 }
 displayPerson2(person);
 
+// * common realistic example:
+
 function displayPerson3({ name, age }) {
   console.log(`Name: ${name}, Age: ${age}`);
 }

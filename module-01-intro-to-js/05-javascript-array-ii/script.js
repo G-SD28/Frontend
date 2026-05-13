@@ -7,8 +7,8 @@ function add(num1, num2) {
   return (num1 + num2) * 2;
 }
 
-// console.log(add(0, 0));
-// console.log(add(1, 7));
+console.log(add(0, 0));
+console.log(add(1, 7));
 
 // # Arrow Functions
 
@@ -18,7 +18,8 @@ const addArrowFunc = (num1, num2) => {
 
 const shortAddArrowFunc = (num1, num2) => (num1 + num2) * 2;
 
-// console.log(shortAddArrowFunc(4, 5));
+console.log(addArrowFunc(4, 5));
+console.log(shortAddArrowFunc(4, 5));
 
 // # Higher-Order functions
 // * 1. Nimmt eine andere Funktion als Argument entgegen (Callback)
@@ -121,7 +122,7 @@ const people = [
 
 // Ziel: ["ALICE", "BOB", ...]
 const namesToUpperCase = people.map((chicken) => chicken.name.toUpperCase());
-// console.log(namesToUpperCase);
+console.log(namesToUpperCase);
 
 // const person1 = people[0].name.toUpperCase();
 // const person2 = people[1].name.toUpperCase();
@@ -154,7 +155,7 @@ const person = { firstName: 'John', age: 40 };
 
 // const copyOfPerson = { firstName: 'John', age: 40, age: 41, isStudent: false };
 const copyOfPerson = { ...person, age: 41, isStudent: false };
-// console.log(copyOfPerson);
+console.log(copyOfPerson);
 
 const people2 = [
   { name: 'Alice', age: 15 },
@@ -242,10 +243,10 @@ console.log('Final total age: ', totalAge);
 // Iteration 4: acc 80 + Dave 30 => 110
 
 // # .some() & .every()
-// * .some() - Prüft, ob mindestens ein element den Test besteht -> boolean (true/false)
+// * .some() - Prüft, ob *mindestens ein* element den Test besteht -> boolean (true/false)
 const isAnyoneAChild = peopleFind.some((person) => person.age < 18);
 console.log(isAnyoneAChild);
 
-// * .every() - Prüft, ob ALLE Elemente den Test bestehen -> boolean (true/false)
+// * .every() - Prüft, ob *alle* Elemente den Test bestehen -> boolean (true/false)
 const areAllAdults = peopleFind.every((person) => person.age >= 18);
 console.log(areAllAdults);

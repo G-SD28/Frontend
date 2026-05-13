@@ -71,7 +71,7 @@ console.log(double(3));
 */
 console.log(triple(4));
 
-// * ALTERNATIVE:
+// Shorthand:
 const doubleShort = multiplier(2)(3);
 console.log(doubleShort);
 
@@ -90,7 +90,7 @@ numbers.forEach((num, index) => {
 });
 // console.log(numbers);
 
-// * map() - Erstelt ein neues Array, indem jedes element transformiert wird
+// * map() - Erstelt ein neues Array, indem jedes Element transformiert wird
 const doubleNumbers = numbers.map((num) => {
   return num * 2;
 });

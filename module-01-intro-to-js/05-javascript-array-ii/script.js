@@ -52,7 +52,7 @@ function multiplier(factor) {
   };
 }
 
-// console.log(multiplier(2));
+console.log(multiplier(2));
 /*
 (number) => {
     return number * 2
@@ -62,13 +62,13 @@ function multiplier(factor) {
 const double = multiplier(2);
 const triple = multiplier(3);
 
-// console.log(double(3));
+console.log(double(3));
 /*
 (3) => {
     return 3 * 2
     }
 */
-// console.log(triple(4));
+console.log(triple(4));
 
 // * ALTERNATIVE:
 const doubleShort = multiplier(2)(3);
@@ -94,8 +94,8 @@ const doubleNumbers = numbers.map((num) => {
   return num * 2;
 });
 
-// console.log('Original array: ', numbers);
-// console.log('New array: ', doubleNumbers);
+console.log('Original array: ', numbers);
+console.log('New array: ', doubleNumbers);
 
 // const winterSale = numbers.map((price) => {
 //   return {
@@ -109,8 +109,8 @@ const winterSale = numbers.map((price) => ({
   priceWSale: price * 0.8,
   currency: 'EUR',
 }));
-// console.log(winterSale);
-// console.log('Original array: ', numbers);
+console.log(winterSale);
+console.log('Original array: ', numbers);
 
 const people = [
   { name: 'Alice', age: 15 },

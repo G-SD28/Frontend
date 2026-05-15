@@ -34,9 +34,10 @@ const createPara = (text) => {
   newPara.setAttribute('class', 'para');
   // newPara.classList.add('para');
   paraContainer.appendChild(newPara);
+  // paraContainer.prepend(newPara);
 };
 
-createPara('JS created this para');
+createPara('<b>JS created this para</b>');
 createPara('JS created this para again');
 
 // Sicher:
@@ -85,3 +86,45 @@ const handleClick = () => {
 };
 // handleClick, handleSubmit, onSubmit, onClick
 changeColorBtn.addEventListener('click', handleClick);
+
+window.addEventListener('load', () => {
+  // console.log(chicken);
+  console.log('Page has been loaded');
+});
+
+// # Forms
+const form = document.querySelector('form');
+
+form.addEventListener('submit', (event) => {
+  event.preventDefault();
+  console.log(event);
+  const newParagraph = event.target['new-paragraph'].value.trim();
+
+  // if (newParagraph === '') {
+  if (!newParagraph) {
+    alert('Please enter a text');
+    return;
+  }
+
+  if (newParagraph.length < 3) {
+    alert('Text must be at least 3 char long');
+    return;
+  }
+
+  if (newParagraph.length > 100) {
+    alert('Text must be at less than 100 3 char');
+    return;
+  }
+
+  if (newParagraph.includes('<script>')) {
+    alert('Invalid input detected');
+    return;
+  }
+
+  createPara(newParagraph);
+
+  // event.target['new-paragraph'].value = '';
+  form.reset();
+
+  console.log('Form has submitted');
+});

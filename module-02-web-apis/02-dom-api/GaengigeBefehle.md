@@ -69,3 +69,18 @@ window.addEventListener('load', () => {}); // Seite vollständig geladen
 window.addEventListener('resize', () => {}); // Fenstergröße geändert
 window.addEventListener('scroll', () => {}); // Seite gescrollt
 ```
+
+## insertAdjacentHTML vs. createElement
+
+### insertAdjacentHTML
+
+- Super schnell für viel statisches Markup
+- Sehr nah am finalen HTML → gut für Layout-Demos
+- Strings müssen vertrauenswürdig sein (XSS!)
+- Kein Rückgabewert der eingefügten Nodes → anschließend selektieren
+
+### createElement / append
+
+- Sehr sicher bei dynamischen/externen Daten (textContent etc.)
+- Fein steuerbar, einzelne Nodes vorhanden
+- Mehr Zeilen bei komplexen Layouts

@@ -1,4 +1,4 @@
-# 🧩 DOM-Kurzübersicht: Selektion, Events & `insertAdjacentHTML`
+# 🧩 DOM-Kurzübersicht
 
 ## 1. Element-Selektion
 
@@ -61,11 +61,9 @@
 
 ---
 
-# 🧾 Häufige Event-Typen
+# 🧾 Einige Event-Typen
 
 ```js
-// Hier sind einige Events, die häufiger vorkommen
-
 // 🖱️ Maus-Events
 element.addEventListener('click', () => {}); // Einfach-Klick
 element.addEventListener('dblclick', () => {}); // Doppelklick

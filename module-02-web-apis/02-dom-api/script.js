@@ -52,8 +52,8 @@ createPara('JS created this para again');
 const name = 'Ada';
 
 const htmlStuff = `
-  <h3>Hello ${name}</h3>
-  <p>Welcome to this side.</p>
+  <h3 class="text-lg font-bold" >Hello ${name}</h3>
+  <p class="italic">Welcome to this side.</p>
 `;
 
 subHeading.insertAdjacentHTML('beforebegin', htmlStuff);
@@ -66,14 +66,16 @@ subHeading.style.color = 'red';
 
 // Ueber eine HTMLCollection iterieren
 for (let index = 0; index < paras.length; index++) {
-  //   console.log(paras[index]);
+  console.log(paras[index]);
 }
 
 // In ein Array umwandeln
 const parasArray = [...paras];
 // const parasArray = Array.from(paras);
 // console.log(parasArray);
-// parasArray.forEach((i) => console.log(i));
+parasArray.forEach((i) => {
+  console.log(i);
+});
 
 // # Event Listener
 const handleClick = () => {

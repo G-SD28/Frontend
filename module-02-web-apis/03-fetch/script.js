@@ -35,8 +35,9 @@ const renderComic = (comicData) => {
           </figcaption>
         </figure>`;
 
-  comicContainerEl.insertAdjacentHTML("afterbegin", html);
+  // comicContainerEl.insertAdjacentHTML("afterbegin", html);
   //   comicContainerEl.innerHTML += html
+  comicContainerEl.setHTML(html);
 };
 
 const renderError = (message) => {

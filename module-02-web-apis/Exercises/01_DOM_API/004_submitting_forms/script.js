@@ -1,17 +1,61 @@
-// Submitting forms
-// ================
+// Select the form and the output paragraph
+const contactForm = document.getElementById('contact-form');
+const outputParagraph = document.getElementById('output');
 
-// ### Objective
+// Function to handle form submission
+contactForm.addEventListener('submit', (event) => {
+  event.preventDefault();
 
-// In this exercise, you will create a simple contact form and use JavaScript to handle the form submission, validate the fields, and display the submitted data.
+  // Get form field values
+  const name = document.getElementById('name').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const message = document.getElementById('message').value.trim();
 
-// ### Instructions:
+  //   if (!name.value || !email.value || !message.value) {
+  //     output.textContent = "Please fill out all fields";
+  //     output.classList.remove("bg-green-500");
+  //     output.classList.add("bg-red-500");
 
-// *   Add an event listener to handle form submission.
-// *   Validate that all fields are not empty.
-//     *   If validation passes, output the form data to the console and display it in the `p` element as a list (`ul`)
-//     *   If not output an error message in the `p` element, style it as an error. Maybe something red and flashy?
-//     *   [Make sure to toggle the error and success styles](https://developer.mozilla.org/en-US/docs/Web/API/Element/classList)!
-//     *   Clear the form fields
+  //   } else {
+  //     output.innerHTML = `<ul>
+  //         <li>${name}</li>
+  //         <li>${email}</li>
+  //         <li>${message}</li>
+  //         </ul>`;
+  //     output.classList.remove("bg-red-500");
+  //     output.classList.add("bg-green-500");
 
-//  In a real-life scenario, we would use the yet another Web API to send the data from the form over the network to store the data, sign up an user, create an order, process a payment and a very long et cetera, that other Web API is called **Fetch API**. We will talk about it very soon!
+  //     contactForm.reset();
+  //   }
+
+  // Validate fields are not empty
+  try {
+    if (!name) {
+      throw new Error('Name is required');
+    }
+    if (!email) {
+      throw new Error('Email is required');
+    }
+    if (!message) {
+      throw new Error('Message is required');
+    }
+
+    // Display the data in the paragraph
+    outputParagraph.setHTML(`
+      <ul>
+        <li>${name}</li>
+        <li>${email}</li>
+        <li>${message}</li>
+      </ul>`);
+    outputParagraph.classList.remove('bg-red-500');
+    outputParagraph.classList.add('bg-green-500');
+
+    // Clear the form fields
+    contactForm.reset();
+    // e.target.reset();
+  } catch (error) {
+    outputParagraph.textContent = error.message;
+    outputParagraph.classList.remove('bg-green-500');
+    outputParagraph.classList.add('bg-red-500');
+  }
+});

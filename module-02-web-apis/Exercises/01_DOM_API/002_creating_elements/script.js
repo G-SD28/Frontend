@@ -1,45 +1,142 @@
-// Creating elements
-// =================
+// Create the header element and its children
+const header = document.createElement('header');
+header.classList.add('header');
 
-// #### Objective
+const nav = document.createElement('nav');
+nav.classList.add('nav');
 
-// In this exercise, you will use JavaScript to create a complete web page from scratch.
+const logo = document.createElement('a');
+logo.href = '#';
+logo.classList.add('logo');
+logo.textContent = 'Coffee Shop';
 
-// You'll dynamically generate all the HTML content and apply CSS styles using JavaScript's `element.style` property.
+const navList = document.createElement('ul');
+navList.classList.add('nav-list');
 
-// ### Instructions
+const navItems = ['Home', 'Menu', 'About', 'Contact'];
+navItems.forEach((item) => {
+  const navItem = document.createElement('li');
+  navItem.classList.add('nav-item');
+  const navLink = document.createElement('a');
+  navLink.href = '#';
+  navLink.textContent = item;
+  navItem.append(navLink);
+  navList.append(navItem);
+});
 
-// 1.  **Create the HTML Structure**:
+nav.append(logo, navList);
+header.append(nav);
 
-//     *   Create a `header` element with a `nav` inside it.
-//     *   Inside the `nav`, create an `a` element with the class `logo` and the text "Coffee Shop".
-//     *   Create a `ul` element with the class `nav-list`. Inside the `ul`, create four `li` elements with the class `nav-item`, each containing an `a` element with text "Home", "Menu", "About", and "Contact".
-// 2.  **Create the Hero Section**:
+// Create the hero section and its children
+const hero = document.createElement('section');
+hero.classList.add('hero');
 
-//     *   Create a `section` element with the class `hero`.
-//     *   Inside the `hero`, create a `div` with the class `hero-content`.
-//     *   Inside the `div`, create an `h1` element with the text "Welcome to Our Coffee Shop".
-//     *   Add a `p` element with the text "Enjoy the best coffee in town."
-//     *   Add an `a` element with the class `btn` and the text "Explore Our Menu".
-// 3.  **Create the Footer**:
+const heroContent = document.createElement('div');
+heroContent.classList.add('hero-content');
 
-//     *   Create a `footer` element with the class `footer`.
-//     *   Inside the `footer`, create a `p` element with the text "© 2024 Coffee Shop. All rights reserved.".
-// 4.  **Apply CSS Styles Using JavaScript**:
+const heroHeading = document.createElement('h1');
+heroHeading.textContent = 'Welcome to Our Coffee Shop';
 
-//     *   Use JavaScript to apply the following CSS styles to the elements using `element.style`:
-//         *   `.header`: background-color: #fff, box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), padding: 1rem 0.
-//         *   `.nav`: display: flex, justify-content: space-between, align-items: center, max-width: 1200px, margin: 0 auto, padding: 0 1rem.
-//         *   `.logo`: font-size: 1.5rem, font-weight: bold, color: #333, text-decoration: none.
-//         *   `.nav-list`: display: flex, list-style: none.
-//         *   `.nav-item`: margin-left: 1.5rem.
-//         *   `.nav-item a`: text-decoration: none, color: #333, font-weight: bold.
-//         *   `.hero`: height: 560px, background: url("[https://images.pexels.com/photos/2907301/pexels-photo-2907301.jpeg?auto=compress&cs=tinysrgb&w=640&h=853&dpr=1](https://images.pexels.com/photos/2907301/pexels-photo-2907301.jpeg?auto=compress&cs=tinysrgb&w=640&h=853&dpr=1)") no-repeat center center/cover, color: #fff.
-//         *   `.hero-content`: max-width: 600px, height: 100%, display: flex, flex-direction: column, justify-content: space-around, align-items: center, text-align: center.
-//         *   `.hero-content h1`: font-size: 2.5rem, margin-bottom: 1rem.
-//         *   `.hero-content p`: font-size: 1.2rem, margin-bottom: 2rem.
-//         *   `.btn`: background-color: #333, color: #fff, padding: 0.75rem 1.5rem, text-decoration: none, border-radius: 5px, transition: background-color 0.3s ease.
-//         *   `.btn:hover`: background-color: #555. (tip: you can set a `mouseover` and a `mouseout` event for this)
-//         *   `.footer`: background-color: #333, color: #fff, text-align: center, padding: 1rem 0, margin-top: auto.
+const heroText = document.createElement('p');
+heroText.textContent = 'Enjoy the best coffee in town.';
 
-// Now, is this practical? Certainly no! But you gotta learn and get comfortable with the DOM API ❤️
+const heroButton = document.createElement('a');
+heroButton.href = '#';
+heroButton.classList.add('btn');
+heroButton.textContent = 'Explore Our Menu';
+
+heroContent.append(heroHeading, heroText, heroButton);
+hero.append(heroContent);
+
+// Create the footer and its children
+const footer = document.createElement('footer');
+footer.classList.add('footer');
+
+const footerText = document.createElement('p');
+footerText.innerHTML = '&copy; 2024 Coffee Shop. All rights reserved.';
+footer.appendChild(footerText);
+
+// Append all sections to the body
+document.body.append(header, hero, footer);
+
+// Apply CSS styles using element.style
+
+// Header styles
+header.style.backgroundColor = '#fff';
+header.style.boxShadow = '0 2px 4px rgba(0, 0, 0, 0.1)';
+header.style.padding = '1rem 0';
+
+// Nav styles
+nav.style.display = 'flex';
+nav.style.justifyContent = 'space-between';
+nav.style.alignItems = 'center';
+nav.style.maxWidth = '1200px';
+nav.style.margin = '0 auto';
+nav.style.padding = '0 1rem';
+
+// Logo styles
+logo.style.fontSize = '1.5rem';
+logo.style.fontWeight = 'bold';
+logo.style.color = '#333';
+logo.style.textDecoration = 'none';
+
+// Nav-list styles
+navList.style.display = 'flex';
+navList.style.listStyle = 'none';
+
+// Nav-item styles
+document.querySelectorAll('.nav-item').forEach((navItem) => {
+  navItem.style.marginLeft = '1.5rem';
+});
+
+// Nav-link styles
+document.querySelectorAll('.nav-item a').forEach((navLink) => {
+  navLink.style.textDecoration = 'none';
+  navLink.style.color = '#333';
+  navLink.style.fontWeight = 'bold';
+});
+
+// Hero styles
+hero.style.height = '560px';
+hero.style.background =
+  'url("https://images.pexels.com/photos/2907301/pexels-photo-2907301.jpeg?auto=compress&cs=tinysrgb&w=640&h=853&dpr=1") no-repeat center center/cover';
+hero.style.color = '#fff';
+
+// Hero-content styles
+heroContent.style.maxWidth = '600px';
+heroContent.style.height = '100%';
+heroContent.style.display = 'flex';
+heroContent.style.flexDirection = 'column';
+heroContent.style.justifyContent = 'space-around';
+heroContent.style.alignItems = 'center';
+heroContent.style.textAlign = 'center';
+
+// Hero-heading styles
+heroHeading.style.fontSize = '2.5rem';
+heroHeading.style.marginBottom = '1rem';
+
+// Hero-text styles
+heroText.style.fontSize = '1.2rem';
+heroText.style.marginBottom = '2rem';
+
+// Button styles
+heroButton.style.backgroundColor = '#333';
+heroButton.style.color = '#fff';
+heroButton.style.padding = '0.75rem 1.5rem';
+heroButton.style.textDecoration = 'none';
+heroButton.style.borderRadius = '5px';
+heroButton.style.transition = 'background-color 0.3s ease';
+
+heroButton.addEventListener('mouseover', () => {
+  heroButton.style.backgroundColor = '#555';
+});
+heroButton.addEventListener('mouseout', () => {
+  heroButton.style.backgroundColor = '#333';
+});
+
+// Footer styles
+footer.style.backgroundColor = '#333';
+footer.style.color = '#fff';
+footer.style.textAlign = 'center';
+footer.style.padding = '1rem 0';
+footer.style.marginTop = 'auto';

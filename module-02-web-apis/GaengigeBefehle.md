@@ -28,6 +28,7 @@
 - `append()` → fügt eine oder mehrere Nodes/Texte als letztes Child ein
 - `prepend()` → fügt eine oder mehrere Nodes/Texte als erstes Child ein
 - `insertAdjacentHTML()` → fügt einen HTML-String an einer bestimmten Position relativ zu einem Element ein
+- `setHTML()` → ersetzt den Inhalt eines Elements durch einen HTML-String, sanitisiert diesen aber vorher automatisch; sicherere Alternative zu `innerHTML`, aber noch nicht von WebKit unterstützt
 
 ---
 
@@ -65,33 +66,33 @@
 
 ```js
 // 🖱️ Maus-Events
-element.addEventListener('click', () => {}); // Einfach-Klick
-element.addEventListener('dblclick', () => {}); // Doppelklick
-element.addEventListener('mouseenter', () => {}); // Maus betritt Element
-element.addEventListener('mouseleave', () => {}); // Maus verlässt Element
-element.addEventListener('mouseover', () => {}); // Maus über Element oder Kind
-element.addEventListener('mouseout', () => {}); // Maus verlässt Element oder Kind
+element.addEventListener("click", () => {}); // Einfach-Klick
+element.addEventListener("dblclick", () => {}); // Doppelklick
+element.addEventListener("mouseenter", () => {}); // Maus betritt Element
+element.addEventListener("mouseleave", () => {}); // Maus verlässt Element
+element.addEventListener("mouseover", () => {}); // Maus über Element oder Kind
+element.addEventListener("mouseout", () => {}); // Maus verlässt Element oder Kind
 
 // ⌨️ Tastatur-Events
-input.addEventListener('keydown', (e) => {
+input.addEventListener("keydown", (e) => {
   console.log(e.key); // Welche Taste wurde gedrückt?
 });
-input.addEventListener('keyup', () => {});
-input.addEventListener('keypress', () => {}); // Veraltet – lieber keydown verwenden
+input.addEventListener("keyup", () => {});
+input.addEventListener("keypress", () => {}); // Veraltet – lieber keydown verwenden
 
 // 🧩 Formular-Events
-form.addEventListener('submit', (e) => {
+form.addEventListener("submit", (e) => {
   e.preventDefault();
 });
-input.addEventListener('change', () => {}); // Wert geändert & Fokus verloren
-input.addEventListener('input', () => {}); // Wert geändert (in Echtzeit)
-input.addEventListener('focus', () => {}); // Element bekommt Fokus
-input.addEventListener('blur', () => {}); // Element verliert Fokus
+input.addEventListener("change", () => {}); // Wert geändert & Fokus verloren
+input.addEventListener("input", () => {}); // Wert geändert (in Echtzeit)
+input.addEventListener("focus", () => {}); // Element bekommt Fokus
+input.addEventListener("blur", () => {}); // Element verliert Fokus
 
 // 🌍 Fenster-Events
-window.addEventListener('load', () => {}); // Seite vollständig geladen
-window.addEventListener('resize', () => {}); // Fenstergröße geändert
-window.addEventListener('scroll', () => {}); // Seite gescrollt
+window.addEventListener("load", () => {}); // Seite vollständig geladen
+window.addEventListener("resize", () => {}); // Fenstergröße geändert
+window.addEventListener("scroll", () => {}); // Seite gescrollt
 ```
 
 ---
@@ -109,10 +110,10 @@ element.insertAdjacentHTML(position, htmlString);
 Es gibt vier mögliche Positionen:
 
 ```js
-element.insertAdjacentHTML('beforebegin', '<p>Vor dem Element</p>');
-element.insertAdjacentHTML('afterbegin', '<p>Als erstes Child im Element</p>');
-element.insertAdjacentHTML('beforeend', '<p>Als letztes Child im Element</p>');
-element.insertAdjacentHTML('afterend', '<p>Nach dem Element</p>');
+element.insertAdjacentHTML("beforebegin", "<p>Vor dem Element</p>");
+element.insertAdjacentHTML("afterbegin", "<p>Als erstes Child im Element</p>");
+element.insertAdjacentHTML("beforeend", "<p>Als letztes Child im Element</p>");
+element.insertAdjacentHTML("afterend", "<p>Nach dem Element</p>");
 ```
 
 ## Vorteile
@@ -134,15 +135,35 @@ element.insertAdjacentHTML('afterend', '<p>Nach dem Element</p>');
 ```js
 const userInput = '<img src=x onerror=alert("Hacked!")>';
 
-element.insertAdjacentHTML('beforeend', userInput); // gefährlich
+element.insertAdjacentHTML("beforeend", userInput); // gefährlich
 ```
 
 Besser bei User-Input:
 
 ```js
-const p = document.createElement('p');
+const p = document.createElement("p");
 p.textContent = userInput;
 element.append(p);
+```
+
+---
+
+# `setHTML()`
+
+`setHTML()` ist eine neuere Methode, um HTML aus einem String in ein Element einzufügen.
+
+Im Unterschied zu `innerHTML` wird der HTML-String vorher automatisch **sanitisiert**. Das bedeutet: Unsichere Elemente und Attribute wie `<script>`, `<iframe>` oder Event-Handler wie `onclick` werden entfernt.
+
+```js
+const html = '<p>Hello!</p><script>alert("XSS")</script>';
+
+element.setHTML(html);
+```
+
+Das eingefügte Ergebnis enthält nur das sichere HTML:
+
+```html
+<p>Hello!</p>
 ```
 
 ---
@@ -152,8 +173,8 @@ element.append(p);
 Mit `createElement()` erstellt man Elemente Schritt für Schritt als echte DOM-Nodes.
 
 ```js
-const li = document.createElement('li');
-li.textContent = 'Neuer Eintrag';
+const li = document.createElement("li");
+li.textContent = "Neuer Eintrag";
 
 list.append(li);
 ```

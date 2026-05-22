@@ -55,3 +55,19 @@ async function fetchPokemon() {
     console.error(`Fehler beim Abrufen der Pokémon-Daten mit id: ${counter} & error: ${error}.`);
   }
 }
+
+// let counter = 1;
+// fetchPokemon(counter);
+
+// const intervalId = setInterval(() => {
+//   counter++;
+//   fetchPokemon(counter);
+//   if (counter === 150) clearInterval(intervalId);
+// }, 1000);
+
+// function fetchPokemon(id) {
+//   fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
+//     .then((res) => res.json())
+//     .then((data) => console.log({ id: data.id, name: data.name }))
+//     .catch((err) => console.error(err));
+// }

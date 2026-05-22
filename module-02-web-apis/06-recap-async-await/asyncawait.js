@@ -43,6 +43,7 @@ const displayPokemon = async (id) => {
 
   pokemonContainer.appendChild(pokemonCard);
 };
+
 displayPokemon(15);
 displayPokemon(1);
 displayPokemon(2);

@@ -56,6 +56,7 @@ async function fetchPokemon() {
   }
 }
 
+// # Nikita's solution
 // let counter = 1;
 // fetchPokemon(counter);
 

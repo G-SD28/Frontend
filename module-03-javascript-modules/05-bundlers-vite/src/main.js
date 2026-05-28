@@ -2,6 +2,8 @@ import { LOCALSTORAGE_TASKS } from './config.js';
 import { createLi, renderStorage } from './ui.js';
 import { getFromStorage, writeToStorage } from './utils.js';
 
+console.log(import.meta.env.VITE_SERVER_URL);
+
 // # DOM-Elemente
 const form = document.querySelector('form');
 const userInput = document.getElementById('userInput');

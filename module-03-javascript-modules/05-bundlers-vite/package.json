@@ -4,9 +4,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --mode development",
     "build": "vite build",
-    "preview": "vite preview",
+    "preview": "vite --mode production",
     "stegosaurus": "echo 'Hallo, world'"
   },
   "dependencies": {

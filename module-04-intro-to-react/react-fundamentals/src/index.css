@@ -63,3 +63,8 @@ body {
   flex-direction: column;
   box-sizing: border-box;
 }
+
+.navbar {
+  background-color: blue;
+  color: #aa3bff;
+}

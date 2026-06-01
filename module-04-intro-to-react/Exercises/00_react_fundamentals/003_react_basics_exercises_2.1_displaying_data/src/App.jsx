@@ -1,6 +1,4 @@
-import './index.css';
-
-// Download the template to get started
+import Student from './components/Student';
 
 const studentData = {
   id: 1,
@@ -13,7 +11,30 @@ const studentData = {
 };
 
 const App = () => {
-  return <div>{/* Your UI goes here */}</div>;
+  // const [student, setStudent] = useState(studentData);
+
+  return (
+    <>
+      {/* * Auch keine Referenz auf das orginal Objekt, sondern Werte einzeln übergeben
+      // <Student
+      //   firstName={studentData.firstName}
+      //   lastName={studentData.lastName}
+      //   age={studentData.age}
+      //   course={studentData.course}
+      //   city={studentData.city}
+      //   picture={studentData.picture}
+      // />
+
+      {/* * Keine Referenz, sondern eine Kopie */}
+      {/* <Student {...studentData} />  */}
+
+      {/* * Ganzes Objekt als Prop */}
+      <Student student={studentData} />
+      {/* ! Wenn original Objekt in child-component mutiert/verändert werden soll, dann besser das Ganze als State übergeben */}
+
+      {/* <Student student={student} /> */}
+    </>
+  );
 };
 
 export default App;

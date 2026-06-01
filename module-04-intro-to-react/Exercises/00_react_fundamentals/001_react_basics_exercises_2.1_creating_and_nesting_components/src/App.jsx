@@ -1,9 +1,18 @@
 import './index.css';
-
-// Download the template to get started
+import Footer from './components/Footer';
+import Header from './components/Header';
+import Hero from './components/Hero';
+import Services from './components/Services';
 
 const App = () => {
-  return <div>{/* Your UI goes here */}</div>;
+  return (
+    <>
+      <Header />
+      <Hero />
+      <Services />
+      <Footer />
+    </>
+  );
 };
 
 export default App;

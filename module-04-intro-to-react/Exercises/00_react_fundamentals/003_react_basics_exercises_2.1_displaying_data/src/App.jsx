@@ -26,10 +26,10 @@ const App = () => {
       // />
 
       {/* * Keine Referenz, sondern eine Kopie */}
-      {/* <Student {...studentData} />  */}
+      <Student {...studentData} />
 
       {/* * Ganzes Objekt als Prop */}
-      <Student student={studentData} />
+      {/* <Student student={studentData} /> */}
 
       {/* ! Wenn original Objekt in child-component mutiert/verändert werden soll, dann besser das Ganze als State übergeben */}
       {/* <Student student={student} /> */}

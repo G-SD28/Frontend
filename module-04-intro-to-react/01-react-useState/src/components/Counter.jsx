@@ -2,26 +2,18 @@ import { useState } from 'react';
 
 const Counter = () => {
   const [counter, setCounter] = useState(0);
-  const [name, setName] = useState('Renke');
-  const [theme, setTheme] = useState('light');
   // 1. Ändert den Wert (counter)
   // 2. sagt der React componente zu re-render mit dem neuen Wert
 
   const handleClick = async () => {
     // * Direct State Update - Wenn der vorherige Wert einfach überschrieben werden soll
-    setCounter(counter + 1);
-
+    setCounter(counter + 1); // 1
     // * Functional State Update - Wenn der vorherige Wert relevant ist
-    setCounter((previousValue) => previousValue + 1); // 0 + 1 = 1
-  };
-
-  const toggleTheme = () => {
-    setTheme((prev) => (prev === 'light' ? 'dark' : 'light'));
+    setCounter((previousValue) => previousValue + 1); // 1 + 1 = 1
   };
 
   return (
     <>
-      <span>{name}</span>
       <div className='flex w-36 justify-between border-2'>
         <button onClick={handleClick} className='cursor-pointer bg-green-400 p-4 font-bold'>
           +

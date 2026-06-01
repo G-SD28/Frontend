@@ -30,8 +30,8 @@ const App = () => {
 
       {/* * Ganzes Objekt als Prop */}
       <Student student={studentData} />
-      {/* ! Wenn original Objekt in child-component mutiert/verändert werden soll, dann besser das Ganze als State übergeben */}
 
+      {/* ! Wenn original Objekt in child-component mutiert/verändert werden soll, dann besser das Ganze als State übergeben */}
       {/* <Student student={student} /> */}
     </>
   );

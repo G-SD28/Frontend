@@ -2,7 +2,8 @@ import Grade from './Grade';
 
 const Student = ({ firstName, lastName, picture, age, city, course, gpa, graduate }) => {
   return (
-    <article className='card'>
+    <article className={`card ${graduate ? 'card-graduate' : ''}`}>
+      {/* <article className={graduate ? 'card card-graduate' : 'card'}> */}
       <img className='card-image' src={picture} alt={`${firstName} ${lastName}`} />
       <div className='card-body'>
         <h2>
@@ -18,6 +19,9 @@ const Student = ({ firstName, lastName, picture, age, city, course, gpa, graduat
           <strong>City:</strong> {city}
         </p>
         <Grade gpa={gpa} />
+        <p>
+          <strong>Status:</strong> {graduate ? 'Alumnus' : 'Student'}
+        </p>
       </div>
     </article>
   );

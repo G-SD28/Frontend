@@ -9,8 +9,8 @@ const studentData = {
   course: 'Web Development',
   city: 'Berlin',
   picture: 'https://randomuser.me/api/portraits/men/1.jpg',
-  gpa: 70,
-  graduate: false,
+  gpa: 67,
+  graduate: true,
 };
 
 const App = () => {

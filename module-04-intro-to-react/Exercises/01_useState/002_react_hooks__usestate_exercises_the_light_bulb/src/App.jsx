@@ -1,41 +1,32 @@
+import { useState } from 'react';
+
+import LightBulb from './components/LightBulb';
+
 import './index.css';
 
-const LightBulb = () => {
-  return (
-    <div className="container">
-      <div className="bulb-light">
-        <div id="light" />
-        <div id="bulb">
-          <div className="bulb-top">
-            <div className="reflection" />
-          </div>
-          <div className="bulb-middle-1" />
-          <div className="bulb-middle-2" />
-          <div className="bulb-middle-3" />
-          <div className="bulb-bottom" />
-        </div>
-
-        <div id="base">
-          <div className="screw-top" />
-          <div className="screw-a" />
-          <div className="screw-b" />
-          <div className="screw-a" />
-          <div className="screw-b" />
-          <div className="screw-a" />
-          <div className="screw-b" />
-          <div className="screw-c" />
-          <div className="screw-d" />
-        </div>
-      </div>
-    </div>
-  );
-};
-
 const App = () => {
+  const [isOn, setIsOn] = useState(false);
+  const [counter, setCounter] = useState(0);
+
+  function handleClick() {
+    if (counter < 10) {
+      setIsOn((i) => !i);
+    }
+    if (isOn) {
+      setCounter((c) => c + 1);
+    }
+    // setCounter((c) => (isOn ? c + 1 : c));
+  }
+
+  console.log(counter);
+
   return (
     <>
-      <button>Switch</button>
-      <LightBulb />
+      <button disabled={counter >= 10} onClick={handleClick}>
+        {isOn ? 'Switch off' : 'Switch on'}
+      </button>
+      <button onClick={() => setCounter(0)}>Reset</button>
+      <LightBulb isOn={isOn} />
     </>
   );
 };

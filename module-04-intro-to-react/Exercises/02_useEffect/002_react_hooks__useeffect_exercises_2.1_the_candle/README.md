@@ -4,9 +4,9 @@
 
 Learn how to control when an effect runs with  `useEffect` based on it's dependency array, and demonstrate the the purpose of a cleanup function.
 
-**Instructions:** 
+**Instructions:**
 
-We want this candle to reduce its height as time passes. We have a height state that we use to set the height of our candle. Change the initial value of height to see it's effect on the candle. 
+We want this candle to reduce its height as time passes. We have a height state that we use to set the height of our candle. Change the initial value of height to see it's effect on the candle.
 
 We want to let an effect control this of course.
 

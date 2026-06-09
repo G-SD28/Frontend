@@ -1,0 +1,10 @@
+.active-link {
+  color: green;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.normal-link {
+  color: black;
+  text-decoration: none;
+}

@@ -2,7 +2,7 @@
 // Arrays Exercise — Higher Order Array Methods
 // ============================================================
 // Use the products array below to complete all exercises.
-//
+
 // MDN Dokumentation:
 // map()    → https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map
 // filter() → https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
@@ -158,13 +158,32 @@ const products = [
 // ============================================================
 // 🟡 Exercise 1 — map()
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map
-//
+
+// const numbers = [1, 2, 3, 4];
+// console.log(numbers);
+
+// const doubled = numbers.map((n) => n * 2);
+// console.log(doubled);
+
 // Get an array of all product titles.
 // Expected: ['Fjallraven Backpack', 'Mens Casual T-Shirts', ...]
 // ============================================================
 
-const titles = // your code here
-  console.log('Exercise 1 — titles:', titles);
+// const titles = products.map((product) => product.title);
+// console.log('Exercise 1 — titles:', titles);
+
+// const students = [
+//   'Mira',
+//   'Vladimir',
+//   'Wei',
+//   'Jamal',
+//   'Marinel',
+//   'Sebastian',
+//   'Victoria',
+//   'Onur',
+// ];
+
+// const test = students.map((a, b, c) => console.log(a, b, c));
 
 // ============================================================
 // 🟡 Exercise 2 — map()
@@ -172,8 +191,11 @@ const titles = // your code here
 // Expected: [{ title: 'Fjallraven Backpack', price: 109.95 }, ...]
 // ============================================================
 
-const titlesAndPrices = // your code here
-  console.log('Exercise 2 — titlesAndPrices:', titlesAndPrices);
+// const titlesAndPrices = products.map((product) => ({
+//   title: product.title,
+//   price: product.price,
+// }));
+// console.log('Exercise 2 — titlesAndPrices:', titlesAndPrices);
 
 // ============================================================
 // 🟠 Exercise 3 — filter()
@@ -182,16 +204,22 @@ const titlesAndPrices = // your code here
 // Get all products in the 'electronics' category.
 // ============================================================
 
-const electronics = // your code here
-  console.log('Exercise 3 — electronics:', electronics);
+// const numbers = [1, 2, 3, 4];
+// const bigNumbers = numbers.filter((n) => n > 2);
+// console.log(bigNumbers);
+
+// const electronics = products.filter(
+//   (product) => product.category === 'electronics',
+// );
+// console.log('Exercise 3 — electronics:', electronics);
 
 // ============================================================
 // 🟠 Exercise 4 — filter()
 // Get all products that cost less than $20.
 // ============================================================
 
-const affordable = // your code here
-  console.log('Exercise 4 — affordable:', affordable);
+// const affordable = products.filter((product) => product.price < 20);
+// console.log('Exercise 4 — affordable:', affordable);
 
 // ============================================================
 // 🟠 Exercise 5 — find()
@@ -200,16 +228,20 @@ const affordable = // your code here
 // Find the product with id 12.
 // ============================================================
 
-const productById = // your code here
-  console.log('Exercise 5 — productById:', productById);
+// const numbers = [1, 2, 3];
+// const result = numbers.find((n) => n > 1);
+// console.log(result);
+
+// const productById = products.find((product) => product.id === 12);
+// console.log('Exercise 5 — productById:', productById);
 
 // ============================================================
 // 🟠 Exercise 6 — find()
 // Find the first product with a rating above 4.5.
 // ============================================================
 
-const highlyRated = // your code here
-  console.log('Exercise 6 — highlyRated:', highlyRated);
+// const highlyRated = products.find((product) => product.rating.rate > 4.5);
+// console.log('Exercise 6 — highlyRated:', highlyRated);
 
 // ============================================================
 // 🔵 Exercise 7 — some()
@@ -219,30 +251,52 @@ const highlyRated = // your code here
 // Expected: true or false
 // ============================================================
 
-const hasExpensive = // your code here
-  console.log('Exercise 7 — hasExpensive:', hasExpensive);
+// const numbers = [1, 2, 3];
+// const result = numbers.some((n) => n > 2);
+// console.log(result);
+
+// const hasExpensive = products.find((product) => product.price > 500);
+// console.log('Exercise 7 — hasExpensive:', hasExpensive);
 
 // ============================================================
 // 🔵 Exercise 8 — every()
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every
+
+// const evens = [2, 4, 6];
+// const result = evens.every((n) => n % 2 === 0);
+// console.log(result);
+
+// console.log(4 % 2);
+// console.log(5 % 2);
+
 //
 // Check if all products have a rating above 1.
 // Expected: true or false
 // ============================================================
 
-const allRated = // your code here
-  console.log('Exercise 8 — allRated:', allRated);
+// const allRated = products.every((product) => product.rating.rate > 1.8);
+// console.log('Exercise 8 — allRated:', allRated);
 
 // ============================================================
 // 🔴 Exercise 9 — reduce()
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce
-//
+
+// const numbers = [1, 2, 3];
+
+// const total = numbers.reduce((sum, n) => sum + n, 0);
+
+// Step 1: sum = 0, n = 1 => sum + n = 1
+// Step 2: sum = 1, n = 2 => sum + n = 3
+// Step 3: sum = 3, n = 3 => sum + n = 6
+
+// console.log(total);
+
 // Calculate the total price of all products combined.
 // Expected: a single number
 // ============================================================
 
-const totalPrice = // your code here
-  console.log('Exercise 9 — totalPrice:', totalPrice);
+// const totalPrice = products.reduce((sum, product) => sum + product.price, 0);
+// console.log('Exercise 9 — totalPrice:', totalPrice.toFixed(2));
 
 // ============================================================
 // 🔴 Exercise 10 — reduce()
@@ -251,8 +305,10 @@ const totalPrice = // your code here
 // Hint: use toFixed(2)
 // ============================================================
 
-const averageRating = // your code here
-  console.log('Exercise 10 — averageRating:', averageRating);
+// const averageRating =
+//   products.reduce((sum, product) => sum + product.rating.rate, 0) /
+//   products.length;
+// console.log('Exercise 10 — averageRating:', averageRating.toFixed(2));
 
 // ============================================================
 // ⭐ Exercise 11 — Chaining
@@ -260,8 +316,10 @@ const averageRating = // your code here
 // Expected: ['White Gold Plated Princess', 'Pierced Owl Rose Gold']
 // ============================================================
 
-const cheapJewelery = // your code here
-  console.log('Exercise 11 — cheapJewelery:', cheapJewelery);
+// const cheapJewelery = products
+//   .filter((product) => product.category === 'jewelery' && product.price < 100)
+//   .map((product) => product.title);
+// console.log('Exercise 11 — cheapJewelery:', cheapJewelery);
 
 // ============================================================
 // ⭐ Exercise 12 — Chaining
@@ -270,5 +328,8 @@ const cheapJewelery = // your code here
 // Hint: filter first, then reduce
 // ============================================================
 
-const electronicsTotalPrice = // your code here
-  console.log('Exercise 12 — electronicsTotalPrice:', electronicsTotalPrice);
+// const electronicsTotalPrice = products
+
+//   .filter((product) => product.category === 'electronics')
+//   .reduce((sum, product) => sum + product.price, 0);
+// console.log('Exercise 12 — electronicsTotalPrice:', electronicsTotalPrice);

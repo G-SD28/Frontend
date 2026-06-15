@@ -1,6 +1,10 @@
-# Projektüberblick: Event-App mit React, API und Authentication
+# Event-App mit React, API und Authentication
 
 In diesem Projekt baut ihr eine **Event-App mit React**.
+
+für dieses Projekt bekommt ihr eine fertige **Events API**, die ihr lokal auf eurem Computer starten müsst.
+
+Die API ist dokumentiert, und ihr könnt die Endpoints auch über **Swagger**, **Postman** oder **Insomnia** testen.
 
 Das Ziel ist, dass ihr nicht mehr nur mit `localStorage` oder fertigen APIs arbeitet, sondern mit einer echten **REST API**, die Daten erstellen, lesen, aktualisieren und löschen kann.
 
@@ -12,10 +16,6 @@ Diese Aktionen nennt man **CRUD**:
 | Read   | Daten lesen         | `GET`       |
 | Update | Daten aktualisieren | `PUT`       |
 | Delete | Daten löschen       | `DELETE`    |
-
-für dieses Projekt bekommt ihr eine fertige **Events API**, die ihr lokal auf eurem Computer starten müsst.
-
-Die API ist dokumentiert, und ihr könnt die Endpoints auch über **Swagger**, **Postman** oder **Insomnia** testen.
 
 ---
 
